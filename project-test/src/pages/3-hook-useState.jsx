@@ -18,7 +18,7 @@ function UseState() {
 
     return (
         <div className='App'>
-            <h1>Front Beginnners</h1>
+            <h1>Front Beginners</h1>
             <h3>{count}</h3>
             <button onClick={handleClick}>Adicionar</button>
             <p>Bem-vindo(a) {showText && <u>ao nosso exemplo</u>} </p>
