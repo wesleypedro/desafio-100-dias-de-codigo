@@ -3,12 +3,12 @@ import { useState } from 'react';
 
 function UseState() {
     const [count, setCount] = useState(0);
-
     const [valueInput, setValueInput] = useState('Wesley');
+    const [showText, setShowText] = useState(true);
 
-    const add = () => {
+    const handleClick = () => {
         setCount(count + 1);
-        console.log(count);
+        setShowText(!showText);
     }
 
     const onChangeInput = (event) => {
@@ -20,7 +20,8 @@ function UseState() {
         <div className='App'>
             <h1>Front Beginnners</h1>
             <h3>{count}</h3>
-            <button onClick={add}>Adicionar</button>
+            <button onClick={handleClick}>Adicionar</button>
+            <p>Bem-vindo(a) {showText && <u>ao nosso exemplo</u>} </p>
 
             <div>
                 <input onChange={onChangeInput}/>
