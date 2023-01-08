@@ -7,7 +7,7 @@ function UseState() {
     const [showText, setShowText] = useState(true);
 
     const handleClick = () => {
-        setCount(count + 1);
+        setCount((count) => count + 1);
         setShowText(!showText);
     }
 
