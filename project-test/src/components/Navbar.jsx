@@ -8,6 +8,7 @@ export const Navbar = () => {
         <Link to='3-hook-useState'> UseState </Link>
         <Link to='4-modal'> Modal </Link>
         <Link to='6-hook-useReducer'> UseReducer </Link>
+        <Link to='7-api-axios'> API com Axios </Link>
     </nav>
   )
 }

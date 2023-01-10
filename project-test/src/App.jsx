@@ -6,6 +6,7 @@ import Map from './pages/1-map';
 import UseState from './pages/3-hook-useState';
 import Modal from './pages/4-modal';
 import UseReducer from './pages/6-hook-useReducer';
+import ApiAxios from './pages/7-api-axios';
 
 import { Navbar } from './components/navbar';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='3-hook-useState' element={<UseState />} />
           <Route path='4-modal' element={<Modal />} />
           <Route path='6-hook-useReducer' element={<UseReducer />} />
+          <Route path='7-api-axios' element={<ApiAxios />} />
         </Routes>
       </BrowserRouter>
       
