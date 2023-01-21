@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     width: 600px;
 `
 
-const Button = styled.button<{isActive: boolean}>`
+const Button = styled.button<{ isActive: boolean }>`
     opacity: ${(p) => (p.isActive ? null : '0.3')}
 
     &:focus:disabled {
@@ -29,14 +29,26 @@ const Button = styled.button<{isActive: boolean}>`
     }
 `
 
-export default function Keyboard() {
-  return (
-    <Wrapper>
-        {Keys.map((letter) => (
-            <Button isActive={true} key={letter}>
-                {letter.toUpperCase()}
-            </Button>
-        ))}
-    </Wrapper>
-  )
+interface KeyBoardProps {
+    disable?: boolean
+    activeLetters: string[]
+    inactiveLetters: string[]
+    addGuessedLetters: (letter: string) => void
+}
+
+export default function Keyboard({ disable=false, activeLetters, inactiveLetters, addGuessedLetters }: KeyBoardProps) {
+    return (
+        <Wrapper>
+            {Keys.map((letter) => {
+                const isActive = !activeLetters.includes(letter)
+                const isInactive = !inactiveLetters.includes(letter)
+
+                return (
+                    <Button onClick={() => addGuessedLetters(letter)} isActive={(isActive && isInactive)} key={letter} disabled={!(isActive && isInactive) || disable}>
+                        {letter.toUpperCase()}
+                    </Button>
+                )
+            })}
+        </Wrapper>
+    )
 }
